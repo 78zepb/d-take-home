@@ -1,18 +1,33 @@
-# Hello World
+# Take home assignment 
 
-This is the default project that is scaffolded out when you run `npx @temporalio/create@latest ./myfolder`.
+## Start up environment  
 
-The [Hello World Tutorial](https://learn.temporal.io/getting_started/typescript/hello_world_in_typescript/) walks through the code in this sample.
-
-### Running this sample
-
-1. `temporal server start-dev` to start [Temporal Server](https://github.com/temporalio/cli/#installation).
-1. `npm install` to install dependencies.
-1. `npm run start.watch` to start the Worker.
-1. In another shell, `npm run workflow` to run the Workflow Client.
-
-The Workflow should return:
+Run each make command in a different terminal in the root of the project
 
 ```bash
-Hello, Temporal!
+# Start up temporal server
+make server
+```
+
+```bash
+# Start up worker
+make worker
+```
+
+
+## Run assignment 
+
+```bash
+# Start workflow
+# The showStarWars workflow takes the filter arugment which is people with red eyes and who's name contains numbers
+# Actual arg:  
+# '[{"propertyName":"eye_color","operator":"=","value":"red"},{"propertyName":"name","operator":"@","value":"containsNum"}]'
+make workflow
+```
+
+## Run unit tests
+
+```bash
+# This command runs and watches the tests
+make test
 ```
